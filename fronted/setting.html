@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign In</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+     <!-- <h1 id="Todolo">Welcome Todolo</h1> -->
+    <h2>Update Your Details</h2>
+    <h3>first verify your self</h3>
+    <input type="text" id="name" placeholder="Enter your current name"><br>
+    <input type="password" id="currentpassward" placeholder="Enter your current password"><br>
+     
+    <input type="text" id="newname" placeholder="Enter your new name"><br>
+    <input type="password" id="newPassword" placeholder="Enter your new password"><br>
+    <button onclick="Update()">Update</button>
+   
+     <p><a href="profilePage.html">Back</a></p>
+  </div>
+
+  <script>
+    async function Update() {
+         const name = document.getElementById("name").value;
+      const password = document.getElementById("currentpassward").value;
+     
+        const newname = document.getElementById("newname").value;
+        const newpassword = document.getElementById("newPassword").value;
+       if(!password || !name){
+        alert("Please first verfiy your self");
+        return;
+      }
+      if(!newname && !newpassword){
+        alert("Please enter new details to update");
+        return;
+
+      }
+
+      
+      
+
+      const res = await fetch("http://localhost:5000/api/update", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, password, newname, newpassword }) // isme hm name or password ko json format me backend pr bhej rhe hai
+      });
+
+      const data = await res.json();
+      alert(data.message);
+
+      if (data.success) {
+        localStorage.setItem("loggedUser", newname);
+        window.location.href = "profilePage.html"; // successfully update hone ke baad  profile page me jahenge
+    }
+    }
+  </script>
+</body>
+</html>

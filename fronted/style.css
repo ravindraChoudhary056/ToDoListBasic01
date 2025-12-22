@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f5f5f5;
+  background-image: url(3d-rendering-hexagonal-texture-background_23-2150796421.avif);
+  
+    background-size: cover;      /* image screen ke hisab se */
+    background-position: center; /* center me rahe */
+    background-repeat: no-repeat; /* pura backround image ek hi baar dikhai de */
+
+}
+
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #150202;
+  width: 400px;
+  height: auto;
+  text-align: center;
+}
+input {
+  width: 90%;
+  padding: 8px;
+  margin: 10px 0;
+}
+button {
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background: #0056b3;
+}

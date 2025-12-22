@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+     <h1 id="Todolo">Welcome Todolo</h1>
+
+    <h2>Sign Up</h2>
+    <input type="text" id="name" placeholder="Enter your name"><br>
+    <input type="password" id="password" placeholder="Enter your password"><br>
+    <button onclick="signup()">Sign Up</button>
+    <p>Already have an account? <a href="signin.html">Sign In</a></p>
+  </div>
+
+  <script>
+    async function signup() {
+      
+      const name = document.getElementById("name").value;
+      const password = document.getElementById("password").value;
+       if(!name || !password){
+        alert("Please enter your details");
+        return;
+      }
+
+      const res = await fetch("http://localhost:5000/api/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, password })
+      });
+
+      const data = await res.json();
+      alert(data.message);
+      if (data.success) window.location.href = "signin.html";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Profile Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<header>
+  <table width="100%">
+    <tr>
+      <!-- LEFT : LOGOUT -->
+      <td align="left">
+        <a href="signin.html">Logout</a>
+      </td>
+
+      <!-- RIGHT : PROFILE -->
+      <td align="right">
+        <a href="setting.html">Settings</a>
+      </td>
+    </tr>
+  </table>
+  <hr>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+
+  <center>
+    <h1>Welcome to Todolo</h1>
+    <h2>Hello, <span id="greetingName">User</span></h2>
+
+    <br><br>
+
+    <!-- TODO FORM -->
+    <form id="todoForm">
+      <input 
+        type="text" 
+        id="todoInput" 
+        placeholder="Enter your task here"
+        size="40"
+        required
+      >
+      <br><br>
+      <button type="submit">Add Task</button>
+    </form>
+
+    <br><br>
+
+    <!-- TODO LIST -->
+    <h3>Your Tasks</h3>
+    <ul id="todoList">
+      <!-- Tasks will appear here -->
+    </ul>
+
+  </center>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

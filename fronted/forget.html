@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign In</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>find passward</h2>
+    <input type="text" id="name" placeholder="Enter your name"><br>
+    
+    <button onclick="Get()">Get</button>
+
+    
+     <p> <a href="signin.html"> Go back</a></p>
+     
+  </div>
+
+  <script>
+    async function Get() {
+      const name = document.getElementById("name").value;
+      
+     if(!name){
+        alert("Please enter your name");
+        return;
+      }
+      const res = await fetch("http://localhost:5000/api/forget", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({name})
+      });
+
+      const data = await res.json();
+      alert(data.message);
+    }
+
+
+
+
+
+  </script>
+</body>
+</html>
