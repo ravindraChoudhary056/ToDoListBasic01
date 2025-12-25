@@ -37,7 +37,7 @@ todoForm.addEventListener("submit", async (e) => {
   const text = todoInput.value.trim();
   if (!text) return;
 
-  const res = await fetch("http://localhost:5000/api/addTask", {
+  const res = await fetch("https://todolistbasic01.onrender.com/api/addTask", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -67,7 +67,7 @@ function addTaskToUI(task) {
 
   // DELETE TASK  // task ko id se delete nhi kar rhe user ke array me same task choice kar ke use delete kar rhe he
   li.querySelector("button").onclick = async () => {
-    const res = await fetch("http://localhost:5000/api/deleteTaskByText", {
+    const res = await fetch("https://todolistbasic01.onrender.com/api/deleteTaskByText", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
