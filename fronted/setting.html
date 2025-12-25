@@ -40,7 +40,7 @@
       
       
 
-      const res = await fetch("http://localhost:5000/api/update", {
+      const res = await fetch("https://todolistbasic01.onrender.com/api/update", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, password, newname, newpassword }) // isme hm name or password ko json format me backend pr bhej rhe hai
