@@ -25,7 +25,7 @@
         alert("Please enter your name");
         return;
       }
-      const res = await fetch("http://localhost:5000/api/forget", {
+      const res = await fetch("https://todolistbasic01.onrender.com/api/forget", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({name})
