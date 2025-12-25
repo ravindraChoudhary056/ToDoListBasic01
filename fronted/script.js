@@ -16,7 +16,7 @@ const todoList = document.getElementById("todoList");
 
 // LOAD TASKS (GET) 
 async function loadTasks() {
-  const res = await fetch(`http://localhost:5000/api/getTasks/${user}`);
+  const res = await fetch(`https://todolistbasic01.onrender.com/api/getTasks/${user}`);
   const data = await res.json();
 
   todoList.innerHTML = "";
